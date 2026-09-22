@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inovatec - Pagina Inicial</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .historia-texto p {
+    margin: 0 0 12px 0;
+  }
+
+  #video-institucional {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 8px;
+  }
+
+  .fundadores-cargo {
+    font-weight: bold;
+    color: #1a3c6e;
+  }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="marca">
+    <img class="logo" src="logo-inovatec.svg" alt="Logo Inovatec">
+    <p class="frase-apresentacao">Tecnologia sob medida para o crescimento do seu negocio.</p>
+  </div>
+  <nav class="nav-principal">
+    <ul>
+      <li><a href="login.html">Login de Clientes</a></li>
+      <li><a href="cadastro.html">Cadastrar Cliente</a></li>
+      <li id="link-solicitar" class="oculto"><a href="carrinho.html">Solicitar Servicos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section id="historia">
+    <h2>Nossa Historia</h2>
+    <div class="rolagem-longa historia-texto">
+      <img class="imagem-flutuante" src="https://images.unsplash.com/photo-1758873269317-51888e824b28?fm=jpg&q=80&w=600&auto=format&fit=crop" alt="Equipe da Inovatec trabalhando">
+      <p>
+        A <strong>Inovatec</strong> comecou em 2017, dentro de um pequeno escritorio compartilhado no Recife,
+        quando um grupo de amigos formados em Ciencia da Computacao decidiu unir forcas para atender pequenas
+        empresas que nao conseguiam pagar por grandes consultorias de tecnologia. O primeiro cliente foi uma
+        rede de farmacias local, que ainda hoje faz parte da nossa carteira.
+      </p>
+      <p>
+        Com o tempo, a demanda cresceu e a equipe se especializou em tres frentes: suporte tecnico, infraestrutura
+        em nuvem e desenvolvimento de sistemas sob medida. Hoje a Inovatec atende clientes em varios estados do
+        Brasil, sempre mantendo o mesmo espirito proximo e consultivo do primeiro atendimento.
+      </p>
+      <blockquote>
+        "Nao vendemos apenas tecnologia, vendemos tranquilidade para o cliente focar no proprio negocio."
+      </blockquote>
+      <p>
+        Em 2022, a empresa passou a investir fortemente em automacao e seguranca da informacao, criando uma area
+        dedicada exclusivamente a proteger os dados dos clientes contra ameacas digitais cada vez mais comuns.
+      </p>
+    </div>
+  </section>
+
+  <section id="video">
+    <h2>Conheca a Inovatec</h2>
+    <p>Assista ao nosso video institucional e veja como trabalhamos.</p>
+    <iframe id="video-institucional"
+      src="https://www.youtube.com/embed/ScMzIvxBSi4"
+      title="Video institucional Inovatec"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </section>
+
+  <section id="galeria">
+    <h2>Nossas Instalacoes</h2>
+    <div class="galeria">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1748256467077-c75ef01579aa?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Area de trabalho colaborativa da Inovatec">
+        <figcaption>Area colaborativa</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Sala de reunioes da Inovatec">
+        <figcaption>Sala de reunioes</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Equipe de desenvolvimento da Inovatec">
+        <figcaption>Equipe de desenvolvimento</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1489436969537-cf0c1dc69cba?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="Infraestrutura de servidores da Inovatec">
+        <figcaption>Infraestrutura e servidores</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <h2>Nossos Servicos</h2>
+    <p class="nota-rodape-secao">Solucoes completas para a infraestrutura de TI da sua empresa.</p>
+    <div class="servicos-grid">
+      <div class="servico-card">
+        <div class="servico-icone">&#128187;</div>
+        <h3>Suporte Tecnico</h3>
+        <p>Atendimento remoto e presencial para resolver problemas do dia a dia.</p>
+      </div>
+      <div class="servico-card">
+        <div class="servico-icone">&#9729;</div>
+        <h3>Infraestrutura em Nuvem</h3>
+        <p>Migracao e gerenciamento de ambientes na nuvem com alta disponibilidade.</p>
+      </div>
+      <div class="servico-card">
+        <div class="servico-icone">&#128272;</div>
+        <h3>Seguranca da Informacao</h3>
+        <p>Protecao de dados, firewalls e politicas de acesso para sua empresa.</p>
+      </div>
+      <div class="servico-card">
+        <div class="servico-icone">&#9881;</div>
+        <h3>Desenvolvimento de Software</h3>
+        <p>Sistemas sob medida para automatizar processos e escalar seu negocio.</p>
+      </div>
+      <div class="servico-card">
+        <div class="servico-icone">&#128202;</div>
+        <h3>Consultoria em TI</h3>
+        <p>Planejamento estrategico de tecnologia alinhado aos objetivos da empresa.</p>
+      </div>
+      <div class="servico-card">
+        <div class="servico-icone">&#128190;</div>
+        <h3>Backup e Recuperacao</h3>
+        <p>Rotinas automatizadas de backup e planos de recuperacao de desastres.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fundadores">
+    <h2>Nossos Fundadores</h2>
+    <table id="tabela-fundadores">
+      <thead>
+        <tr>
+          <th>Cargo</th>
+          <th>Nome</th>
+          <th>Breve CV</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fundadores-cargo">CEO</td>
+          <td>Pedro Maia</td>
+          <td>Estudante de SI na CESAR School.</td>
+        </tr>
+        <tr>
+          <td class="fundadores-cargo">CTO</td>
+          <td>Gabriel Abreu</td>
+          <td>Estudante de SI na CESAR School.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  <table class="tabela-layout-rodape">
+    <tr>
+      <td>
+        <h2>Contato</h2>
+        <ul class="lista-contato">
+          <li><a href="tel:+558121234567">&#9742; (81) 2123-4567</a></li>
+          <li><a href="https://wa.me/5581991234567" target="_blank">&#128241; WhatsApp: (81) 99123-4567</a></li>
+          <li><a href="mailto:contato@inovatec.com.br">&#9993; contato@inovatec.com.br</a></li>
+        </ul>
+      </td>
+      <td>
+        <h2>Endereco</h2>
+        <p style="margin-top: 10px;">
+          Cais do Apolo, 77<br>
+          Bairo do Recife - PE<br>
+          CEP 50030-220
+        </p>
+      </td>
+      <td>
+        <h2>Formas de Pagamento</h2>
+        <div class="formas-pagamento">
+          <span class="badge-pagamento">Cartao de Credito</span>
+          <span class="badge-pagamento">Pix</span>
+          <span class="badge-pagamento">Boleto Bancario</span>
+          <span class="badge-pagamento">Transferencia</span>
+        </div>
+      </td>
+    </tr>
+  </table>
+</footer>
+
+<script src="institucional.js"></script>
+
+</body>
+</html>
