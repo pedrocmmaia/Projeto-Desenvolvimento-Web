@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
 
-/* Seletor universal */
 *,
 *::before,
 *::after {
@@ -41,7 +40,7 @@ th {
   color: #ffffff;
 }
 
-/* Cascata: duas regras acumulam propriedades diferentes no mesmo elemento */
+
 p {
   color: #333333;
 }
@@ -50,19 +49,16 @@ p {
   font-style: italic;
 }
 
-/* Sobrescrita: a regra mais especifica abaixo prevalece sobre h2 generico acima */
 h2 {
   border-bottom: 3px solid #1a3c6e;
   padding-bottom: 6px;
   display: inline-block;
 }
 
-/* Blocos estruturais */
 header, main, footer, section {
   display: block;
 }
 
-/* Cabecalho do site: flexbox */
 .topo {
   display: flex;
   justify-content: space-between;
@@ -90,7 +86,6 @@ header, main, footer, section {
   font-size: 14px;
 }
 
-/* Combinador filho (>) */
 .nav-principal > ul {
   list-style: none;
   display: flex;
@@ -99,7 +94,6 @@ header, main, footer, section {
   padding: 0;
 }
 
-/* Seletor descendente */
 .nav-principal ul li a {
   text-decoration: none;
   font-weight: bold;
@@ -108,7 +102,6 @@ header, main, footer, section {
   transition: background-color 0.2s ease;
 }
 
-/* Pseudo-classe */
 .nav-principal ul li a:hover,
 .nav-principal ul li a:focus {
   background-color: #eef2f8;
@@ -132,12 +125,10 @@ section {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-/* Combinador irmao adjacente (+) */
 h2 + p {
   margin-top: 12px;
 }
 
-/* Combinador irmao geral (~) */
 h2 ~ .nota-rodape-secao {
   color: #888888;
   font-size: 13px;
@@ -165,7 +156,6 @@ blockquote {
   margin: 0 20px 10px 0;
 }
 
-/* Grid layout */
 .galeria {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -215,7 +205,6 @@ blockquote {
   font-size: 30px;
 }
 
-/* Pseudo-elemento */
 .servico-card h3::after {
   content: "";
   display: block;
@@ -225,7 +214,6 @@ blockquote {
   margin: 8px auto 0;
 }
 
-/* Seletor de atributo */
 a[href^="tel:"],
 a[href^="https://wa.me"],
 a[href^="mailto:"] {
@@ -277,12 +265,10 @@ footer a {
   color: #dbe3ef;
 }
 
-/* Sobrescrita: mesmo seletor redefinido mais abaixo no arquivo, a segunda declaracao vale */
 footer a[href^="https://wa.me"] {
   color: #8fd19e;
 }
 
-/* nth-child */
 #tabela-fundadores tr:nth-child(even) {
   background-color: #f4f6f9;
 }
@@ -291,7 +277,6 @@ footer a[href^="https://wa.me"] {
   background-color: #eef2f8;
 }
 
-/* Botoes gerais reutilizados nas proximas paginas do projeto */
 .botao {
   padding: 10px 22px;
   border: none;
@@ -374,7 +359,6 @@ footer a[href^="https://wa.me"] {
   margin-bottom: 4px;
 }
 
-/* ===== Paginas de formulario (login, troca de senha, cadastro, carrinho) ===== */
 .topo-simples {
   justify-content: flex-start;
 }
