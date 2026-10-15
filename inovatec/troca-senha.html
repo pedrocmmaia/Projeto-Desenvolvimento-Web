@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inovatec - Troca de senha de clientes</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topo topo-simples">
+  <a class="marca" href="institucional.html">
+    <img class="logo" src="logo-inovatec.svg" alt="Logo Inovatec">
+  </a>
+</header>
+
+<main class="pagina-form">
+  <section>
+    <h1>Troca de senha de clientes</h1>
+
+    <output id="instrucoes-senha" class="instrucoes-senha"></output>
+
+    <form id="form-troca" novalidate>
+      <div class="campo">
+        <label for="login">Login (e-mail)</label>
+        <input type="text" id="login" name="login" autocomplete="username">
+      </div>
+
+      <div class="campo">
+        <label for="senha">Nova senha</label>
+        <input type="password" id="senha" name="senha" autocomplete="new-password">
+      </div>
+
+      <div class="campo">
+        <label for="confirmacao">Confirmação da senha</label>
+        <input type="password" id="confirmacao" name="confirmacao" autocomplete="new-password">
+      </div>
+
+      <div class="acoes">
+        <button type="submit" id="botao-troca" class="botao botao-primario">Troca Senha</button>
+        <button type="button" id="botao-limpar" class="botao botao-secundario">Limpar</button>
+      </div>
+
+      <div id="mensagem" class="mensagem" role="alert"></div>
+    </form>
+  </section>
+</main>
+
+<script src="validacoes.js"></script>
+<script src="troca-senha.js"></script>
+
+</body>
+</html>

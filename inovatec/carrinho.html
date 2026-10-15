@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inovatec - Solicitação de serviços de TI</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topo topo-simples">
+  <a class="marca" href="institucional.html">
+    <img class="logo" src="logo-inovatec.svg" alt="Logo Inovatec">
+  </a>
+</header>
+
+<main class="pagina-ampla">
+
+  <section id="secao-usuario">
+    <h1>Solicitação de serviços de TI</h1>
+    <div class="campo">
+      <span class="rotulo">Nome</span>
+      <span id="usuario-nome" class="rotulo-valor">Maria Souza</span>
+    </div>
+    <div class="campo">
+      <span class="rotulo">Login (e-mail)</span>
+      <span id="usuario-login" class="rotulo-valor">maria.souza@email.com</span>
+    </div>
+  </section>
+
+  <section id="secao-solicitacoes">
+    <h2>Minhas solicitações</h2>
+    <div class="tabela-rolagem">
+      <table id="tabela-solicitacoes">
+        <thead>
+          <tr>
+            <th>Data do pedido</th>
+            <th>Nº da solicitação</th>
+            <th>Serviço de TI</th>
+            <th>Status</th>
+            <th>Preço</th>
+            <th>Data prevista</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-solicitacoes"></tbody>
+      </table>
+    </div>
+    <p id="aviso-vazio" class="nota-rodape-secao" hidden>Você ainda não possui solicitações.</p>
+  </section>
+
+  <section id="secao-nova">
+    <h2>Nova solicitação</h2>
+
+    <div class="campo">
+      <label for="servico">Serviço de TI</label>
+      <select id="servico">
+        <option value="">Selecione um serviço...</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <span class="rotulo">Preço</span>
+      <span id="rotulo-preco" class="rotulo-valor">-</span>
+    </div>
+
+    <div class="campo">
+      <span class="rotulo">Prazo de atendimento</span>
+      <span id="rotulo-prazo" class="rotulo-valor">-</span>
+    </div>
+
+    <div class="campo">
+      <span class="rotulo">Data prevista de atendimento</span>
+      <span id="rotulo-data-prevista" class="rotulo-valor">-</span>
+    </div>
+
+    <div class="campo">
+      <span class="rotulo">Status</span>
+      <span id="rotulo-status" class="rotulo-valor">EM ELABORAÇÃO</span>
+    </div>
+
+    <div class="acoes">
+      <button type="button" id="botao-incluir" class="botao botao-primario">Incluir solicitação</button>
+    </div>
+
+    <div id="mensagem" class="mensagem" role="alert"></div>
+  </section>
+
+</main>
+
+<script src="validacoes.js"></script>
+<script src="carrinho.js"></script>
+
+</body>
+</html>
