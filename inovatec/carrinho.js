@@ -25,6 +25,14 @@ var corpoSolicitacoes = document.getElementById("corpo-solicitacoes");
 var avisoVazio = document.getElementById("aviso-vazio");
 var mensagem = document.getElementById("mensagem");
 
+function mostrarUsuarioLogado() {
+  var email = localStorage.getItem("inovatec_login") || "";
+  var usuario = buscarUsuarioPorEmail(email);
+
+  document.getElementById("usuario-nome").textContent = usuario ? (usuario.nome || usuario.email) : "";
+  document.getElementById("usuario-login").textContent = usuario ? usuario.email : "";
+}
+
 function formatarPreco(valor) {
   return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
@@ -150,3 +158,4 @@ botaoIncluir.addEventListener("click", incluirSolicitacao);
 
 renderizarSolicitacoes();
 atualizarRotulosDoServico();
+mostrarUsuarioLogado();
