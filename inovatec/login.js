@@ -7,9 +7,19 @@ var mensagem = document.getElementById("mensagem");
 formLogin.addEventListener("submit", function (evento) {
   evento.preventDefault();
 
+  localStorage.removeItem("inovatec_logado");
+  localStorage.removeItem("inovatec_login");
+
   var erros = errosDeEmail(campoLogin.value).concat(
     campoSenha.value === "" ? ["A senha deve ser preenchida."] : []
   );
+
+  var usuario = buscarUsuarioPorEmail(campoLogin.value);
+  if (erros.length === 0 && !usuario) {
+    erros.push("Este e-mail ainda não possui cadastro. Cadastre-se antes de fazer login.");
+  } else if (erros.length === 0 && usuario.senha !== campoSenha.value) {
+    erros.push("E-mail ou senha incorretos.");
+  }
 
   mostrarMensagem(mensagem, erros, "Validação realizada com sucesso");
 

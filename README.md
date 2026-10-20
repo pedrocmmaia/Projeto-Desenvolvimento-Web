@@ -5,7 +5,12 @@ Solução de 5 páginas para a empresa fictícia **Inovatec**, que vende serviç
 ## Como executar
 
 1. Extraia a pasta do projeto, mantendo todos os arquivos juntos.
-2. Abra `institucional.html` no navegador.
+2. Abra um terminal dentro da pasta `inovatec` e execute `python3 -m http.server 8000`.
+3. Acesse `http://localhost:8000/institucional.html` no navegador. Use um servidor HTTP local em vez de abrir o HTML diretamente (`file://`), pois o player incorporado do YouTube precisa receber a identificação de origem da página.
+
+## Publicar no GitHub Pages
+
+O fluxo `.github/workflows/pages.yml` publica automaticamente o conteúdo de `inovatec/` quando há um push na branch `main`. Ele também usa a página institucional como entrada (`index.html`). Para ativar a publicação, abra **Settings → Pages** no repositório do GitHub e selecione **GitHub Actions** como fonte de build e deploy. Depois de enviar as alterações para `main`, acompanhe a execução em **Actions** e copie o endereço publicado em **Settings → Pages**. A publicação pode levar alguns minutos.
 
 Não há instalação nem dependências. As fotos da galeria (Unsplash) e a fonte Poppins (Google Fonts) são carregadas pela internet.
 
@@ -22,7 +27,7 @@ Não há instalação nem dependências. As fotos da galeria (Unsplash) e a font
 | `styles.css` | Folha de estilos única, usada por todas as páginas. |
 | `logo-inovatec.svg`, `pagamento-*.svg` | Logo e ícones das formas de pagamento. |
 | `galeria-4.jpg` | Quarta foto da galeria. |
-| `video-institucional.mp4` | Vídeo institucional. |
+| Vídeo do YouTube | Vídeo institucional incorporado na página por `iframe`. |
 
 ## Fluxo de navegação
 
@@ -32,7 +37,7 @@ institucional ──► login ──► (sucesso) ──► institucional (link 
       └──► cadastro ◄┘
 ```
 
-O estado de login é guardado em `localStorage` (`inovatec_logado` e `inovatec_login`). Ainda não há autenticação real: qualquer e-mail válido com senha preenchida realiza o login.
+O cadastro e o estado de login são guardados em `localStorage` (`inovatec_usuarios`, `inovatec_logado` e `inovatec_login`). O login só aceita e-mail cadastrado e a senha correspondente. Como o projeto não tem servidor, essa autenticação é apenas uma simulação local para fins acadêmicos; os dados ficam no navegador usado para cadastrar a conta.
 
 ## Páginas e validações
 
@@ -43,11 +48,11 @@ O estado de login é guardado em `localStorage` (`inovatec_logado` e `inovatec_l
 
 ### Login
 - Login obrigatório e com formato de e-mail válido; senha obrigatória.
-- "Realizar Login" valida e, se estiver tudo certo, mostra "Validação realizada com sucesso" e vai para a página institucional.
+- "Realizar Login" valida o e-mail e a senha contra uma conta cadastrada; em caso de sucesso, mostra uma mensagem e vai para a página institucional.
 - "Limpar" apaga os campos e foca o login.
 
 ### Troca de senha
-- Login (e-mail), senha e confirmação são obrigatórios.
+- Login (e-mail), senha atual, nova senha e confirmação são obrigatórios; a nova senha deve ser diferente da atual.
 - A senha precisa ter no mínimo 6 caracteres, com pelo menos 1 número, 1 letra maiúscula e 1 caractere especial permitido: `@ # $ % & * ! ? / \ | - _ + . =`
 - Caracteres não permitidos: `¨ { } [ ] ´ ` ~ ^ : ; < > , “ ‘` (aspas simples e duplas comuns também são bloqueadas).
 - As regras aparecem em um campo de saída (`<output>`) na própria página.
@@ -60,9 +65,10 @@ O estado de login é guardado em `localStorage` (`inovatec_logado` e `inovatec_l
 - **Data de nascimento:** obrigatória, e o cliente precisa ter 18 anos ou mais.
 - **Telefone (opcional):** máscara automática e validação de formato nacional, ex.: `(81) 99999-9999`.
 - **Estado civil** (padrão: solteiro(a)) e **escolaridade** (padrão: 2º grau completo).
-- "Incluir" valida, "Limpar" restaura os valores padrão e foca o e-mail, "Voltar" retorna à página anterior.
+- "Incluir" valida os campos, rejeita e-mails já cadastrados e salva a nova conta no navegador; "Limpar" restaura os valores padrão e foca o e-mail, "Voltar" retorna à página anterior.
 
 ### Carrinho (solicitação de serviços de TI)
+- A página confere a sessão e o cadastro antes de carregar o conteúdo; acesso direto sem login redireciona para a tela de login.
 - **Usuário:** nome e e-mail em valores fixos (esta versão ainda não lê o login).
 - **Minhas solicitações:** tabela em ordem crescente de data do pedido, com dados fictícios iniciais e botão de excluir em cada linha.
 - **Nova solicitação:** combo de serviços; preço, prazo e data prevista (hoje + prazo) são calculados ao selecionar; status inicial "EM ELABORAÇÃO"; o botão "Incluir solicitação" adiciona a linha na tabela.
@@ -82,10 +88,10 @@ O estado de login é guardado em `localStorage` (`inovatec_logado` e `inovatec_l
 
 **JavaScript:** validações, máscaras, manipulação do DOM e `localStorage`.
 
-## Pendências antes da entrega
+## Requisitos visuais e conteúdo
 
-- Preencher o nome e o CV do **terceiro fundador** na tabela da página institucional (o PDF exige 3).
-- O PDF pede o vídeo em **streaming no YouTube**. O projeto usa atualmente o arquivo `video-institucional.mp4`; para atender ao requisito, hospede o vídeo no YouTube e substitua a tag `<video>` por um `<iframe>` de incorporação.
+- A página institucional incorpora o vídeo publicado no YouTube por meio de um `iframe`.
+- A tabela da página institucional apresenta cargo, nome e breve currículo dos dois fundadores da Inovatec.
 
 ## Autores
 

@@ -5,6 +5,26 @@ function emailValido(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
 }
 
+function obterUsuariosCadastrados() {
+  try {
+    var usuarios = JSON.parse(localStorage.getItem("inovatec_usuarios") || "[]");
+    return Array.isArray(usuarios) ? usuarios : [];
+  } catch (erro) {
+    return [];
+  }
+}
+
+function salvarUsuariosCadastrados(usuarios) {
+  localStorage.setItem("inovatec_usuarios", JSON.stringify(usuarios));
+}
+
+function buscarUsuarioPorEmail(email, usuarios) {
+  var emailNormalizado = email.trim().toLowerCase();
+  return (usuarios || obterUsuariosCadastrados()).find(function (usuario) {
+    return usuario.email.toLowerCase() === emailNormalizado;
+  }) || null;
+}
+
 function errosDeEmail(email) {
   if (email.trim() === "") {
     return ["O login (e-mail) deve ser preenchido."];

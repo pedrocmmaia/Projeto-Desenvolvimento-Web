@@ -12,6 +12,7 @@
 
   #video-institucional {
     width: 100%;
+    height: auto;
     aspect-ratio: 16 / 9;
     border: 0;
     border-radius: 8px;
@@ -46,22 +47,21 @@
     <div class="rolagem-longa historia-texto">
       <img class="imagem-flutuante" src="https://images.unsplash.com/photo-1758873269317-51888e824b28?fm=jpg&q=80&w=600&auto=format&fit=crop" alt="Equipe da Inovatec trabalhando">
       <p>
-        A <strong>Inovatec</strong> começou em 2017, dentro de um pequeno escritório compartilhado no Recife,
-        quando um grupo de amigos formados em Ciência da Computação decidiu unir forças para atender pequenas
-        empresas que não conseguiam pagar por grandes consultorias de tecnologia. O primeiro cliente foi uma
-        rede de farmácias local, que ainda hoje faz parte da nossa carteira.
+        A <strong>Inovatec</strong> nasceu em 2025, no Recife, a partir da parceria entre estudantes de
+        Sistemas de Informação. Ao longo da graduação, o grupo percebeu que muitas pequenas
+        empresas da cidade precisavam de tecnologia, mas não tinham como pagar por grandes consultorias.
+        A solução foi montar uma empresa enxuta, com atendimento próximo e preços acessíveis.
       </p>
       <p>
         Com o tempo, a demanda cresceu e a equipe se especializou em três frentes: suporte técnico, infraestrutura
-        em nuvem e desenvolvimento de sistemas sob medida. Hoje a Inovatec atende clientes em vários estados do
-        Brasil, sempre mantendo o mesmo espírito próximo e consultivo do primeiro atendimento.
+        em nuvem e desenvolvimento de sistemas sob medida.
       </p>
       <blockquote>
         "Não vendemos apenas tecnologia, vendemos tranquilidade para o cliente focar no próprio negócio."
       </blockquote>
       <p>
-        Em 2022, a empresa passou a investir fortemente em automação e segurança da informação, criando uma área
-        dedicada exclusivamente a proteger os dados dos clientes contra ameaças digitais cada vez mais comuns.
+        Em 2026, ampliamos a equipe e passamos a investir em automação de processos e em segurança da
+        informação, para ajudar nossos clientes a proteger seus dados contra as ameaças digitais atuais.
       </p>
     </div>
   </section>
@@ -69,10 +69,14 @@
   <section id="video">
     <h2>Conheça a Inovatec</h2>
     <p class="texto-destaque">Assista ao nosso vídeo institucional e veja como trabalhamos.</p>
-    <video id="video-institucional" controls preload="metadata">
-      <source src="video-institucional.mp4" type="video/mp4">
-      Seu navegador não suporta a reprodução de vídeo.
-    </video>
+    <iframe id="video-institucional"
+      src="https://www.youtube.com/embed/Pynd9LeKUv8"
+      title="video institucional"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+    <p><a href="https://youtu.be/Pynd9LeKUv8" target="_blank" rel="noopener noreferrer">Assistir ao vídeo diretamente no YouTube</a></p>
   </section>
 
   <section id="galeria">
@@ -205,6 +209,7 @@
   </table>
 </footer>
 
+<script src="validacoes.js"></script>
 <script src="institucional.js"></script>
 
 </body>

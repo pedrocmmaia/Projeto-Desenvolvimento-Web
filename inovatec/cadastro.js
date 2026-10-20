@@ -28,6 +28,22 @@ formCadastro.addEventListener("submit", function (evento) {
     .concat(errosDeDataNascimento(campoNascimento.value, new Date()))
     .concat(errosDeTelefone(campoTelefone.value));
 
+  var usuarios = obterUsuariosCadastrados();
+  if (buscarUsuarioPorEmail(campoEmail.value, usuarios)) {
+    erros.push("Já existe um cadastro com este e-mail. Use outro e-mail ou acesse o login.");
+  }
+
+  if (erros.length === 0) {
+    usuarios.push({
+      email: campoEmail.value.trim(),
+      senha: campoSenha.value,
+      nome: campoNome.value.trim()
+    });
+    salvarUsuariosCadastrados(usuarios);
+    mostrarMensagem(mensagem, [], "Cadastro realizado com sucesso. Agora você já pode fazer login.");
+    return;
+  }
+
   mostrarMensagem(mensagem, erros, "Validação realizada com sucesso");
 });
 
